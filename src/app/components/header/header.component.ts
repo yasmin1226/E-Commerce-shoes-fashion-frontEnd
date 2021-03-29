@@ -12,7 +12,7 @@ import { ProductService } from "src/app/services/product.service";
 export class HeaderComponent implements OnInit {
   cartData = [];
   wishData = [];
-  cartTotal: number;
+  cartTotal = 0;
   productss: import("./../../models/product.model").serverResponse;
   //import { CartComponent } from './../cart/cart.component';
   //import { from } from "rxjs";
@@ -34,6 +34,13 @@ export class HeaderComponent implements OnInit {
     //   this.cartTotal = total;
     // });
     // this.cartService.cartDataObs$.subscribe((data) => (this.cartData = data));
+    if (this.cartData.length >= 1) {
+      console.log("total", this.cartTotal);
+      this.cartData.map((pr) => {
+        this.cartTotal += pr.quantity * pr.price;
+      });
+    }
+    //this.cartTotal = 1000;
   }
   isValid() {
     if (localStorage.getItem("token") !== null) {
