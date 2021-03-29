@@ -20,6 +20,7 @@ import {ToastrModule} from 'ngx-toastr';
 
 import { ContactComponent } from './components/contact/contact.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { WishListComponent } from './components/wish-list/wish-list.component';
     ProductComponent,
     ThankyouComponent,
     ContactComponent,
-    WishListComponent
+    WishListComponent,
+    ProfileComponent
     
   
   ],

@@ -50,7 +50,9 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut() {
-    localStorage.clear();
+    localStorage.removeItem("token");
+    localStorage.removeItem("userData");
+    //  localStorage.clear();
   }
   DeleteProductFromCart(id) {
     /*    console.log(this.cartDataClient.prodData[index].prodId);
