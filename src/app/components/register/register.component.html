@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row m-0 w-100">
+    <div class="col-md-4 offset-4 mt-5" *ngIf="!this.isLogin">
+      <h4>Register</h4>
+      <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+        <div class="form-group">
+          <input
+            class="form-control"
+            id="username"
+            type="text"
+            name="username"
+            placeholder="username"
+            [(ngModel)]="username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            [(ngModel)]="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            id="pass"
+            type="password"
+            name="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            class="form-control"
+            id="gender"
+            type="gender"
+            name="gender"
+            placeholder="Gender"
+            [(ngModel)]="gender"
+            required
+          />
+        </div>
+        <input
+          class="btn btn-outline-info m-5"
+          type="submit"
+          value="Register"
+        />
+        <!--(click)="registerValidation()"-->
+      </form>
+    </div>
+    <div class="col-md-4 offset-4 mt-5" *ngIf="this.isLogin">
+      <!-- <h5>You are logged in</h5> -->
+    </div>
+  </div>
+</div>
