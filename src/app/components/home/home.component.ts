@@ -121,6 +121,7 @@ export class HomeComponent implements OnInit {
     //     x.className = "btn btn-outline-primary btn-sm btn-block";
     //   }
     // });
+    //location.reload();
   }
 
   toggleHeart() {
@@ -207,7 +208,9 @@ export class HomeComponent implements OnInit {
     }
 
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    // location.reload();
   }
+
   selectProduct(id: number) {
     this.router.navigate(["home/product", id]).then();
   }
