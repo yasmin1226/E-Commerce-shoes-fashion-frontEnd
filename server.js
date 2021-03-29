@@ -10,6 +10,6 @@ const port = process.env.PORT || 4200;
 
 app.listen(port);
 
-app.use("/*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(__dirname + "/dist/mega-front/index.html");
 });
