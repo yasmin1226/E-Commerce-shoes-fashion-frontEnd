@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from 'ngx-toastr';
 
 import { ContactComponent } from './components/contact/contact.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ContactComponent } from './components/contact/contact.component';
     CheckoutComponent,
     ProductComponent,
     ThankyouComponent,
-    ContactComponent
+    ContactComponent,
+    WishListComponent
     
   
   ],

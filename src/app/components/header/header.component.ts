@@ -11,6 +11,7 @@ import { ProductService } from "src/app/services/product.service";
 })
 export class HeaderComponent implements OnInit {
   cartData = [];
+  wishData = [];
   cartTotal: number;
   productss: import("./../../models/product.model").serverResponse;
   //import { CartComponent } from './../cart/cart.component';
@@ -24,6 +25,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     console.log("tokennn", localStorage.getItem("token"));
     this.cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    // localStorage.setItem("cart",this.cartData);
+    this.wishData = JSON.parse(localStorage.getItem("wish")) || [];
+
     //  this.cartData = [...this.cartData];
     console.log("xx", this.cartData.length);
     // this.cartService.cartTotal$.subscribe((total) => {

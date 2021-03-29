@@ -104,9 +104,34 @@
                     class="btn btn-outline-primary btn-sm btn-block"
                     [class.disabled]="p.quantity < 1"
                     [class.btn-outline-danger]="p.quantity < 1"
-                    (click)="AddProduct(p._id, p.title, p.description, p.price)"
+                    (click)="
+                      AddProduct(
+                        p._id,
+                        p.title,
+                        p.description,
+                        p.price,
+                        p.imagePath
+                      )
+                    "
                   >
-                    {{ p.quantity < 1 ? "NO STOCK" : "Add To Cart" }}
+                    {{ p.quantity < 1 ? "NO STOCK" : " Add To Cart" }}
+                  </button>
+                  <button
+                    id="too"
+                    class="btn btn-outline-primary btn-sm btn-block"
+                    [class.disabled]="p.quantity < 1"
+                    [class.btn-outline-danger]="p.quantity < 1"
+                    (click)="
+                      AddToWishList(
+                        p._id,
+                        p.title,
+                        p.description,
+                        p.price,
+                        p.imagePath
+                      )
+                    "
+                  >
+                    <i class="fa fa-heart-o"></i>
                   </button>
                 </div>
               </div>

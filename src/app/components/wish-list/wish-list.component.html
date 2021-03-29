@@ -1,0 +1,63 @@
+<div class="container">
+  <div *ngIf="wishData.length === 0" class="text-center my-5">
+    <h4>Your wishList Is Empty</h4>
+    <button class="btn btn-primary btn-lg mt-3" routerLink="/">
+      GO TO SHOP
+    </button>
+  </div>
+
+  <ng-container *ngIf="wishData">
+    <div class="row">
+      <div class="col my-4">
+        <table class="table">
+          <thead class="table-dark">
+            <tr class="text-center">
+              <th>delete</th>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of wishData; let i = index">
+              <td>
+                <span class="text-danger" style="cursor: pointer"
+                  ><i
+                    class="fa fa-trash"
+                    (click)="DeleteProductFromCart(c.id)"
+                  ></i
+                ></span>
+              </td>
+              <td class="d-flex align-items-center justify-content-around">
+                <img
+                  [src]="c.imagePath"
+                  alt="{{ c.name }}"
+                  height="60"
+                  class="order-1"
+                />
+              </td>
+              <td>
+                <p>{{ c.name }}</p>
+              </td>
+              <td>
+                <p>{{ c.price | currency: "USD" }}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-12 d-flex mb-5">
+        <div
+          class="d-flex w-100 justify-content-between flex-sm-column flex-md-row"
+        >
+          <!-- <a routerLink="/checkout" class="btn btn-danger btn-sm order-1">Checkout</a> -->
+
+          <a routerLink="/" class="btn btn-success btn-sm order-0"
+            >Continue Shopping</a
+          >
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

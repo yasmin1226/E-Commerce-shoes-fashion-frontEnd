@@ -126,11 +126,13 @@
           <div class="header-ctn">
             <!-- Wishlist -->
             <div>
-              <a href="#">
-                <i class="fa fa-heart-o"></i>
+              <a routerLink="/wishlist"
+                ><i class="fa fa-heart-o"></i>
                 <span>Your Wishlist</span>
-                <div class="qty">0</div>
-              </a>
+                <div class="qty">
+                  {{ wishData.length !== 0 ? wishData.length : 0 }}
+                </div></a
+              >
             </div>
             <!-- /Wishlist -->
 
