@@ -40,7 +40,6 @@ export class HeaderComponent implements OnInit {
         this.cartTotal += pr.quantity * pr.price;
       });
     }
-    //this.cartTotal = 1000;
   }
   isValid() {
     if (localStorage.getItem("token") !== null) {

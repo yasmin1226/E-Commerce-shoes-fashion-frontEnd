@@ -97,20 +97,21 @@ export class HomeComponent implements OnInit {
       console.log("first clicked");
 
       //.setAttribute("class", "btn btn-outline-danger btn-sm btn-block");
-      this.click = false;
-    } else {
-      let filterdWish = this.wishData.filter((product) => product.id !== id);
-      console.log("after", filterdWish);
-      this.wishData = [...filterdWish];
-      localStorage.setItem("wish", JSON.stringify(filterdWish));
-      //
-
-      // let x = document.querySelector("button#too");
-      // x.className = "btn btn-outline-primary btn-sm btn-block";
-      // console.log(x);
-      console.log("second click");
-      this.click = true;
+      //  this.click = false;
     }
+    // else {
+    //   let filterdWish = this.wishData.filter((product) => product.id !== id);
+    //   console.log("after", filterdWish);
+    //   this.wishData = [...filterdWish];
+    //   localStorage.setItem("wish", JSON.stringify(filterdWish));
+    //   //
+
+    //   // let x = document.querySelector("button#too");
+    //   // x.className = "btn btn-outline-primary btn-sm btn-block";
+    //   // console.log(x);
+    //   console.log("second click");
+    //   this.click = true;
+    // }
     // let x = document.querySelector("button#too");
 
     // this.wishData.map((prd) => {
