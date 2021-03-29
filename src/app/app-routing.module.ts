@@ -9,6 +9,7 @@ import { ProductComponent } from "./components/product/product.component";
 import { ThankyouComponent } from "./components/thankyou/thankyou.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { WishListComponent } from "./components/wish-list/wish-list.component";
+import { AboutUsComponent } from "./components/about-us/about-us.component";
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: "wishlist",
     component: WishListComponent,
+  },
+  {
+    path: "aboutus",
+    component: AboutUsComponent,
   },
 ];
 
