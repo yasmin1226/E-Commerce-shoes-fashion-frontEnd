@@ -7,27 +7,51 @@
             <div class="d-flex flex-column align-items-center text-center">
               <img
                 [src]="
-                  url ? url : 'https://www.w3schools.com/howto/img_avatar.png'
+                  url
+                    ? url
+                    : 'data:image/png;base64,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'
                 "
               />
               <br />
               <input type="file" (change)="onSelectFile($event)" />
 
-              <div class="mt-3">
-                <h4 class="user-name">
-                  <span> {{ userData.username }} </span>
-                </h4>
-              </div>
-
-              <!-- <div>
-                <input
-                  class="choose-file"
-                  type="file"
-                  name="image"
-                  (change)="selectImage($event)"
-                />
-              </div> -->
               <br />
+              <div class="col-md-12">
+                <div class="card mb-3">
+                  <div class="card-body user-name">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">UserName</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <span> {{ userData.username }} </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Email</h6>
+                      </div>
+
+                      <div class="col-sm-9 text-secondary">
+                        {{ userData.email }}
+                      </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Gender</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{ userData.gender }}
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+              </div>
               <!-- <div>
                 <button
                   class="upload"
@@ -38,91 +62,6 @@
                 </button>
               </div> -->
             </div>
-          </div>
-        </div>
-
-        <div class="card mt-3">
-          <!-- <ul class="list-group list-group-flush">
-  
-                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-twitter mr-2 icon-inline text-info">
-                                    <path
-                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                                    </path>
-                                </svg>Twitter</h6>
-                            <span class="text-secondary">@Khaled</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-instagram mr-2 icon-inline text-danger">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>Instagram</h6>
-                            <span class="text-secondary">Khaled</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-facebook mr-2 icon-inline text-primary">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                </svg>Facebook</h6>
-                            <span class="text-secondary">Khaled</span>
-                        </li>
-                    </ul> -->
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="card mb-3">
-          <div class="card-body user-name">
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">UserName</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                <span> {{ userData.username }} </span>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Email</h6>
-              </div>
-
-              <div class="col-sm-9 text-secondary">
-                {{ userData.email }}
-              </div>
-            </div>
-
-            <hr />
-
-            <form></form>
-
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Gender</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{ userData.gender }}
-              </div>
-            </div>
-            <hr />
-
-            <!-- <div class="row">
-                          <div class="col-sm-3">
-                              <h6 class="mb-0">Phone</h6>
-                          </div>
-                          <div class="col-sm-9 text-secondary">
-                            {{user[0].phone}}
-  
-                          </div>
-                      </div> -->
           </div>
         </div>
       </div>

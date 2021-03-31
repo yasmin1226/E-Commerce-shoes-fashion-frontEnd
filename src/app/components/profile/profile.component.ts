@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   //username: string = "";
 
   baseUrl = "https://shoppingcarttt.herokuapp.com/user/profile";
+  baseUrlOr = "https://shoppingcarttt.herokuapp.com/order/myorders";
   constructor(private http: HttpClient, private router: Router) {}
 
   // user = [
@@ -32,13 +33,16 @@ export class ProfileComponent implements OnInit {
   // ];
   ngOnInit(): void {
     this.getUser();
+    this.getOrders();
+    console.log("orderrrrsss", this.orders);
+    console.log("this.orders", this.orders);
     console.log("token", this.token);
     console.log("this.user", this.user);
     this.editUserName("yara");
     //this.editEmail("sarass@gmail.com");
   }
   token = localStorage.getItem("token");
-
+  orders = localStorage.getItem("orders");
   httpOptions = {
     headers: new HttpHeaders({
       Accept: "json/html",
@@ -75,6 +79,37 @@ export class ProfileComponent implements OnInit {
         }
       );
   }
+
+  getOrders() {
+    this.http
+      .get(this.baseUrlOr, this.httpOptions)
+      .pipe(
+        map((resDB) => {
+          console.log("res", resDB);
+          const arrposts = [];
+
+          arrposts.push({ ...resDB });
+
+          return arrposts;
+        })
+      )
+      .subscribe(
+        (posts) => {
+          console.log("orders", posts);
+          //this.orders = posts;
+          localStorage.setItem("orders", JSON.stringify(posts));
+          //   console.log("ordersss", this.orders);
+        },
+        (err) => {
+          if (err instanceof HttpErrorResponse) {
+            if (err.status === 401) {
+              this.router.navigate(["/login"]);
+            }
+          }
+        }
+      );
+  }
+
   user = [
     {
       id: "",
@@ -98,6 +133,7 @@ export class ProfileComponent implements OnInit {
       };
     }
   }
+
   editUserName(username) {
     this.http
       .patch(this.baseUrl, { username: username }, this.httpOptions)

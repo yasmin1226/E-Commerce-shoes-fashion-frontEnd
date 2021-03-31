@@ -4,6 +4,8 @@ import { ProductModelServer, serverResponse } from "../../models/product.model";
 import { CartService } from "../../services/cart.service";
 import { Router } from "@angular/router";
 import { Command } from "protractor";
+import { ToastrService } from "ngx-toastr";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "mg-home",
@@ -15,6 +17,8 @@ export class HomeComponent implements OnInit {
   productss: any = [];
   wishData = [];
   constructor(
+    private http: HttpClient,
+    private toast: ToastrService,
     private productService: ProductService,
     private cartService: CartService,
     private router: Router
@@ -209,10 +213,23 @@ export class HomeComponent implements OnInit {
 
     localStorage.setItem("cart", JSON.stringify(cartItems));
     // location.reload();
+
+    this.toast.success(`${item.name} added to the cart.`, "Product Added", {
+      timeOut: 1500,
+      progressBar: true,
+      progressAnimation: "increasing",
+      positionClass: "toast-top-right",
+    });
   }
 
   selectProduct(id: number) {
     this.router.navigate(["home/product", id]).then();
+  }
+  getSingleProduct(id) {
+    console.log(id);
+    return this.http.get<any>(
+      "https://shoppingcarttt.herokuapp.com/home/product/'" + id
+    );
   }
 
   getProducts() {

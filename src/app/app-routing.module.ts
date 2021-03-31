@@ -11,6 +11,7 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { WishListComponent } from "./components/wish-list/wish-list.component";
 import { AboutUsComponent } from "./components/about-us/about-us.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { OrderComponent } from "./components/order/order.component";
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
+  },
+  {
+    path: "myOrder",
+    component: OrderComponent,
   },
 ];
 
