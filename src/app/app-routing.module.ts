@@ -10,6 +10,7 @@ import { ThankyouComponent } from "./components/thankyou/thankyou.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { WishListComponent } from "./components/wish-list/wish-list.component";
 import { AboutUsComponent } from "./components/about-us/about-us.component";
+import { ProfileComponent } from "./components/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path: "aboutus",
     component: AboutUsComponent,
+  },
+  {
+    path: "profile",
+    component: ProfileComponent,
   },
 ];
 

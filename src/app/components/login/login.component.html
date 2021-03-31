@@ -6,22 +6,23 @@
         <div class="form-group">
           <input
             class="form-control"
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             [(ngModel)]="email"
           />
         </div>
-        <p *ngIf="email == ''">the usere name empty</p>
+        <p *ngIf="!email" style="color: red">email is required</p>
         <div class="form-group">
           <input
             class="form-control"
             type="password"
             name="password"
             placeholder="Password"
-            ngModel
+            [(ngModel)]="password"
           />
         </div>
+        <p *ngIf="!password" style="color: red">password is required</p>
         <input class="btn btn-outline-info" type="submit" value="Login" />
       </form>
       <div>Don't have an account? <a href="/register"> Register</a></div>

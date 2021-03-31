@@ -32,7 +32,6 @@ export class RegisterComponent implements OnInit {
   //    console.log(this.username,this.email,this.password,this.gender);
 
   // }
-
   isLogin: boolean = false;
   errorMessage;
   constructor(

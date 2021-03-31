@@ -21,10 +21,18 @@
         <!-- <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li> -->
         <li>
           <div class="dropdown">
-            <a *ngIf="isValid()" aria-expanded="true" style="cursor: pointer">
+            <!-- <a *ngIf="isValid()" aria-expanded="true" style="cursor: pointer">
               <i class="fa fa-user-o"></i>
-              <span>profile</span>
-            </a>
+              <span >profile</span>
+            </a> -->
+            <li class="nav-item" *ngIf="isValid()">
+              <a
+                class="nav-link"
+                [routerLink]="['profile']"
+                routerLinkActive="active"
+                >Profile</a
+              >
+            </li>
 
             <div class="m-3" style="display: inline-block" *ngIf="!isValid()">
               <li class="nav-item">

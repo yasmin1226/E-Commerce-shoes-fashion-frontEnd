@@ -10,7 +10,7 @@ import { AuthService } from "src/app/services/auth.service";
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-  email: String;
+  email;
   password: String;
   isLogin: boolean = false;
   errorMessage;
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.isUserLogin();
   }
+
   onSubmit(form: NgForm) {
     console.log("Your form data : ", form.value);
 
